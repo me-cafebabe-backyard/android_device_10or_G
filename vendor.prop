@@ -14,3 +14,7 @@ vidc.enc.dcvs.extra-buff-count=2
 
 # 10or G - Crypto
 ro.crypto.volume.contents_mode=aes-256-xts
+
+# 10or G - SoC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8953
