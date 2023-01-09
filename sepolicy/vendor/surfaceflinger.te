@@ -1,4 +1,0 @@
-typeattribute surfaceflinger system_executes_vendor_violators;
-allow surfaceflinger firmware_file:file { open };
-allow surfaceflinger firmware_file:dir { search };
-allow surfaceflinger firmware_file:file { read };
