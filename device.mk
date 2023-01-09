@@ -4,8 +4,20 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# ConsumerIR
+TARGET_HAS_NO_CONSUMERIR := true
+
+# Platform
+TARGET_BOARD_PLATFORM := msm8953
+
+# Inherit from mithorium-common
+$(call inherit-product, device/xiaomi/mithorium-common/mithorium.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+PRODUCT_PACKAGES += \
+    HapticOverlay
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -47,9 +59,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/msm8953-snd-card-mtp_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/msm8953-snd-card-mtp_Button_Jack.kl \
     $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
 
-# Ramdisk
+# Rootdir
 PRODUCT_PACKAGES += \
-    fstab.qcom_ramdisk
+    fstab.qcom_ramdisk \
+    init.acdbdata.sh
 
 # Sensors
 PRODUCT_COPY_FILES += \

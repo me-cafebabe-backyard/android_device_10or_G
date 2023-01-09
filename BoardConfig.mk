@@ -4,6 +4,15 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Partitions
+TARGET_COPY_OUT_VENDOR := vendor
+
+# Partitions (File systems)
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+
+# Inherit from common mithorium-common
+include device/xiaomi/mithorium-common/BoardConfigCommon.mk
+
 DEVICE_PATH := device/10or/G
 
 # Kernel
@@ -15,7 +24,7 @@ TARGET_KERNEL_SOURCE := kernel/10or/G
 TARGET_SCREEN_DENSITY := 440
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Partitions
 BOARD_USES_METADATA_PARTITION := true
@@ -38,7 +47,6 @@ BOARD_MI8937_DYNPART_PARTITION_LIST := odm product system system_ext vendor
 TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-TARGET_COPY_OUT_VENDOR := vendor
 
 # Partitions (File systems)
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -46,10 +54,6 @@ BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-
-# Platform
-TARGET_BOARD_PLATFORM := msm8953
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop

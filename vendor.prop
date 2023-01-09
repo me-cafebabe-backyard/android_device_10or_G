@@ -1,4 +1,7 @@
-# Camera
+# 10or G - Audio
+vendor.audio.mixer_xml.path=/vendor/etc/mixer_paths_mtp.xml
+
+# 10or G - Camera
 camera.display.lmax=1280x720
 camera.display.umax=1920x1080
 camera.lowpower.record.enable=1
@@ -9,5 +12,5 @@ persist.camera.isp.clock.optmz=0
 persist.camera.stats.test=5
 vidc.enc.dcvs.extra-buff-count=2
 
-# Crypto
+# 10or G - Crypto
 ro.crypto.volume.contents_mode=aes-256-xts
