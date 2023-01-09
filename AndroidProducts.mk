@@ -5,4 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_G.mk
+    $(LOCAL_DIR)/lineage_G.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_G-user \
+    lineage_G-userdebug \
+    lineage_G-eng

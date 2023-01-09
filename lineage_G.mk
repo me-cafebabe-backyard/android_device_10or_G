@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The ArrowOS Project
+# Copyright (C) 2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -9,23 +9,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
+# Build ID
+#TARGET_UNOFFICIAL_BUILD_ID := kardebayan
+
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 # Inherit from G device
 $(call inherit-product, device/10or/G/device.mk)
 
-# Inherit some common ArrowOS stuff
-$(call inherit-product, vendor/arrow/config/common.mk)
-
-# ArrowOS
-DEVICE_MAINTAINER := kardebayan
-
-# Boot Animation
-TARGET_BOOT_ANIMATION_RES := 1080
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := 10or
 PRODUCT_DEVICE := G
 PRODUCT_MANUFACTURER := 10or
-PRODUCT_NAME := arrow_G
+PRODUCT_NAME := lineage_G
 PRODUCT_MODEL := 10or G
 
 PRODUCT_GMS_CLIENTID_BASE := android-huaqin
