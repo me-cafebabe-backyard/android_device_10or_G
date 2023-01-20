@@ -1,6 +1,9 @@
 # 10or G - Audio
 vendor.audio.mixer_xml.path=/vendor/etc/mixer_paths_mtp.xml
 
+# 10or G - Bluetooth
+bluetooth.sco.disable_enhanced_connection=1
+
 # 10or G - Camera
 camera.display.lmax=1280x720
 camera.display.umax=1920x1080
